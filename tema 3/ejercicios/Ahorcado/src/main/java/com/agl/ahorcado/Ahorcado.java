@@ -13,35 +13,44 @@ public class Ahorcado {
 
     public static void main(String[] args) {
 
-        int palabra = (int) Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-
-        String[] palabras={"fresa","vainilla","chocalate"};
+        String[] palabras = {"fresa", "vainilla", "chocalate"};
+        String palabra = palabras[(int) (Math.random() * 3)];
         
-        switch (palabra) {
-            case 1:
-                System.out.println("fresa");
-                break;
-            case 2:
-                System.out.println("vainilla");
-                break;
-            case 3:
-                System.out.println("chocalate");
-                break;
-            default:
-        } 
+        for (int i = 0; i < palabras.length; i++) {
+            palabras[i]=palabra;
+            System.out.println(palabras[i]);
+        }
         
-        String[] ahorcado = new String[palabra];
-        String[] guion = guiones(ahorcado);
-        System.out.println(Arrays.toString(guion));
+        
+        
+        
+        String guion=guiones(palabras);
+        System.out.println(guion);
+        
+        
+        
+        //switch (palabra) {
+        //case 1:
+        //System.out.println("fresa");
+        //break;
+        //case 2:
+        //System.out.println("vainilla");
+        //break;
+        //case 3:
+        //System.out.println("chocalate");
+        //break;
+        //default:
+        //} 
     }
-    
-    public static String[] guiones(String[] guiones) {
 
+    public static String guiones(String[] guiones) {
+
+        String guion=("_");
         for (int i = 1; i < guiones.length; i++) {
-            guiones[i] = ("_");
+            guiones[i] = guion;
         }
 
-        return guiones;
+        return guion;
 
     }
 }
