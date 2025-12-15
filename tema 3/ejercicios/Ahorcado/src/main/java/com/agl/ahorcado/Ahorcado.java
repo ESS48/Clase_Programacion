@@ -19,9 +19,13 @@ public class Ahorcado {
 
         System.out.println("La palabra para ver cual es: " + palabra);
 
-        for (int i = 0; i < palabra.length(); i++) {
-            System.out.print("_ ");
+        // array para los guiones.
+        char[] guiones = new char[palabra.length()];
+
+        for (int i = 0; i < guiones.length; i++) {
+            guiones[i] = '_';
         }
+        mostrarGuiones(guiones);
 
         System.out.println("Inserta una letra: ");
         String letra = teclado.nextLine();
@@ -41,17 +45,20 @@ public class Ahorcado {
             System.out.println("Letra incorrecta");
         }
 
-        char[]secreto;
     }
-    
-    // array para los guiones. 
-    
+
+    public static void mostrarGuiones(char[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]+" ");
+        }
+
+    }
     //Pruebas
     //for (int i = 0; i < palabras.length; i++) {
     //palabras[i] = palabra;
     //System.out.println(palabras[i]);
     //}
-    
     //public static String guiones(String[] guiones) {
     //String guion = "_";
     //int G = Integer.parseInt(guion);
@@ -59,5 +66,6 @@ public class Ahorcado {
     //System.out.println(guiones.charAt(i));
     //}
     //return guion;
-    //}
+    //}{
+
 }
