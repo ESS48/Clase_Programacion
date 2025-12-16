@@ -44,7 +44,17 @@ public class Ahorcado {
         } else {
             System.out.println("Letra incorrecta");
         }
-
+        
+        char[] secreto = new char [posicion];
+        
+        if (secreto==guiones) {
+        
+        }
+        
+            
+        
+        
+        
     }
 
     public static void mostrarGuiones(char[] array) {
