@@ -12,20 +12,14 @@ import java.util.Scanner;
 public class tresEnRaya {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
 
         String tablero[][] = new String[3][3];
 
         inicializaTablero(tablero);
         showTablero(tablero);
 
-        System.out.println("Introduce la fila");
-        String fila=teclado.next();
-        System.out.println("Introduce una columna");
-        String columna=teclado.next();
-        
-        juegaPlayer(fila,tablero);
-        juegaPlayer(columna,tablero);
+        juegaPlayer("X", tablero);
+        showTablero(tablero);
 
     }
 
@@ -50,26 +44,56 @@ public class tresEnRaya {
     }
 
     public static void juegaPlayer(String ficha, String[][] tablero) {
+        Scanner teclado = new Scanner(System.in);
+        int fila, columna;
 
-        int fila=0;
-        int columna=1;
-        
-        if (fila==1) {
-            ficha="X";
-            tablero[fila][columna]=ficha;
-        } else if (columna==0) {
-            ficha="O";
-            tablero[fila][columna]=ficha;
-        }
+        System.out.println("El jugador al que le toca es: ");
+
+        System.out.println("Introduce la fila");
+        fila = teclado.nextInt();
+        System.out.println("Introduce una columna");
+        columna = teclado.nextInt();
+
+        do {
+            if (tablero[fila][columna].equals("_")) {
+                tablero[fila][columna] = ficha;
+            } else {
+                System.out.println("Posicion ocupada en el tablero");
+            }
+        } while (fila > 0 || fila < 2);
+
+        do {
+
+        } while (true);
 
     }
 
     public static boolean evaluateWin(String[][] tablero) {
 
         if (true) {
+            for (int i = 0; i < tablero.length; i++) {
+                for (int j = 0; j < tablero[0].length; j++) {
+                    System.out.println(tablero[0][0]);
+                    System.out.println(tablero[0][1]);
+                    System.out.println(tablero[0][2]);
+                }
+            }
+            System.out.println("Ganas");
+        } else if (true) {
+            for (int i = 0; i < tablero.length; i++) {
+                for (int j = 0; j < tablero[0].length; j++) {
+                    System.out.println(tablero[0][0]);
+                    System.out.println(tablero[1][1]);
+                    System.out.println(tablero[2][2]);
+                }
+            }
+            System.out.println("Ganas");
+        } else if (true) {
+
+        } else if (true) {
 
         }
 
-        return false;
+        return true;
     }
 }
