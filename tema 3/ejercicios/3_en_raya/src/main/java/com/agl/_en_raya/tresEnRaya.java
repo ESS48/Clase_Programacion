@@ -3,6 +3,8 @@
  */
 package com.agl._en_raya;
 
+import java.util.Scanner;
+
 /**
  *
  * @author damt119
@@ -10,63 +12,64 @@ package com.agl._en_raya;
 public class tresEnRaya {
 
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
 
         String tablero[][] = new String[3][3];
 
         inicializaTablero(tablero);
-        showTablero();
+        showTablero(tablero);
+
+        System.out.println("Introduce la fila");
+        String fila=teclado.next();
+        System.out.println("Introduce una columna");
+        String columna=teclado.next();
+        
+        juegaPlayer(fila,tablero);
+        juegaPlayer(columna,tablero);
+
     }
 
     public static void inicializaTablero(String[][] tablero) {
 
-        char[][] guiones = new char[tablero.length][tablero.length];
-
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[0].length; j++) {
-                guiones[i][j] = '_';
-                System.out.print(guiones[i][j] + " ");
+                tablero[i][j] = "_";
             }
         }
-
     }
 
     public static void showTablero(String[][] tablero) {
 
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[0].length; j++) {
-                tablero[i][j]="X";
-                System.out.print(tablero[i][j]+" ");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(tablero[i][j] + " ");
             }
+            System.out.println(" ");
         }
-        
-        for (int i = 0; i < tablero[0].length; i++) {
-            for (int j = 0; j < tablero.length; j++) {
-                tablero[i][j]="O";
-                System.out.print(tablero[i][j]+" ");
-            }
-        }
-        
+
     }
 
-    public static void juegaPlayer(String ficha, String tablero) {
+    public static void juegaPlayer(String ficha, String[][] tablero) {
+
+        int fila=0;
+        int columna=1;
         
-        //char[][] ficha = new char[tablero.length][tablero.length];
-        
-        //if (true) {
-            //for (int i = 0; i < tablero.length; i++) {
-                //for (int j = 0; j < tablero[0].length; j++) {
-                    //ficha[i][j]='X';
-                    //System.out.println(tablero[i][j]);
-                //}
-            //}
-        //} else if (true) {
-            //for (int i = 0; i < tablero[0].length; i++) {
-                //for (int j = 0; j < tablero.length; j++) {
-                    //ficha[j][i]='O';
-                    //System.out.println(tablero[j][i]);
-                //}
-            //}
-        //}
-        
+        if (fila==1) {
+            ficha="X";
+            tablero[fila][columna]=ficha;
+        } else if (columna==0) {
+            ficha="O";
+            tablero[fila][columna]=ficha;
+        }
+
+    }
+
+    public static boolean evaluateWin(String[][] tablero) {
+
+        if (true) {
+
+        }
+
+        return false;
     }
 }
