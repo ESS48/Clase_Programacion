@@ -14,12 +14,34 @@ public class tresEnRaya {
     public static void main(String[] args) {
 
         String tablero[][] = new String[3][3];
-        int contador = 0;
+        boolean gana=false;
+
         inicializaTablero(tablero);
         showTablero(tablero);
+        
+        
+        int turno=0;
+        
+        
+        
+        do {
+            if (turno%2==0) {
 
-        juegaPlayer("X", tablero);
-        showTablero(tablero);
+                System.out.println("¿Donde quieres mover, Jugador X?");
+                juegaPlayer("X", tablero);
+                showTablero(tablero);
+                gana = evaluateWin(tablero);
+                turno++;
+            } else if (turno%2==1) {
+                System.out.println("¿Donde quieres mover, Jugador 0?");
+                juegaPlayer("0", tablero);
+                showTablero(tablero);
+                gana = evaluateWin(tablero);
+                turno++;
+            }
+            
+            
+        } while (gana==false || turno<9);
 
     }
 
@@ -69,21 +91,44 @@ public class tresEnRaya {
 
     public static boolean evaluateWin(String[][] tablero) {
 
-        if (true) {
-            for (int i = 0; i < tablero.length; i++) {
-                for (int j = 0; j < tablero[0].length; j++) {
+        //Ganan forma de fila
+        if (!tablero[0][0].equals("_") && tablero[0][0].equals(tablero[0][1]) && tablero[0][1].equals(tablero[0][2])) {
 
-                }
-            }
-            System.out.println("Ganas");
-        } else if (true) {
-
-        } else if (true) {
-
-        } else if (true) {
-
+            return true;
         }
 
-        return true;
+        if (!tablero[1][0].equals("_") && tablero[1][0].equals(tablero[1][1]) && tablero[1][1].equals(tablero[1][2])) {
+
+            return true;
+        }
+
+        if (!tablero[2][0].equals("_") && tablero[2][0].equals(tablero[2][1]) && tablero[2][1].equals(tablero[2][2])) {
+            return true;
+        }
+
+        //ganan forma columna
+        if (!tablero[0][0].equals("_") && tablero[0][0].equals(tablero[1][0]) && tablero[1][0].equals(tablero[2][0])) {
+            return true;
+        }
+
+        if (!tablero[0][1].equals("_") && tablero[0][1].equals(tablero[1][1]) && tablero[1][1].equals(tablero[2][1])) {
+            return true;
+        }
+
+        if (!tablero[0][2].equals("_") && tablero[0][2].equals(tablero[1][2]) && tablero[1][2].equals(tablero[2][2])) {
+            return true;
+        }
+
+        //ganan en forma diagonal
+        if (!tablero[0][0].equals("_") && tablero[0][0].equals(tablero[1][1]) && tablero[1][1].equals(tablero[2][2])) {
+            return true;
+        }
+
+        if (!tablero[0][2].equals("_") && tablero[0][2].equals(tablero[1][1]) && tablero[1][1].equals(tablero[2][0])) {
+            return true;
+        }
+
+        return false;
     }
+
 }
