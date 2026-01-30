@@ -4,6 +4,8 @@
  */
 package com.agl.aventura_conversacional;
 
+import java.util.Random;
+
 /**
  *
  * @author damt119
@@ -40,9 +42,12 @@ public class Arma {
         System.out.println("Daño maximo: "+this.danioMaximo);
     }
     
-    public void devolverDanio(int devolver){
+    public void devolverDanio(){
     
-    
+        Random r=new Random();
+        int devolver=r.nextInt();
+        
+        this.danioMaximo=devolver;
     
     }
     
