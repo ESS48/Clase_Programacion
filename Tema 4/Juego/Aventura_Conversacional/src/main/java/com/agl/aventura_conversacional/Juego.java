@@ -10,23 +10,14 @@ package com.agl.aventura_conversacional;
  */
 public class Juego {
 
-    private int seleccion;
     private String introduccicon;
     private int menu;
     private String escena1;
-    
-    
-    public Juego(){
-    
+
+    public Juego() {
+
     }
 
-    public int getSeleccion() {
-        return seleccion;
-    }
-
-    public void setSeleccion(int seleccion) {
-        this.seleccion = seleccion;
-    }
 
     public String getIntroduccicon() {
         return introduccicon;
@@ -59,34 +50,21 @@ public class Juego {
     }
 
     public void menu(int opcion) {
-        
-        System.out.println("Eleccion: "+this.menu);
-        switch (opcion) {
+
+        this.menu=opcion;
+        System.out.println("Eleccion: " + this.menu);
+        switch (this.menu) {
             case 1:
-                System.out.println();
+                System.out.println("Al ir por este camino, te topas con un enemigo y empieza un combate inesperaso. " + this.escena1);
                 break;
-                
+
             default:
                 System.out.println("No hay ninguna opcion de la elegida.");
         }
 
     }
 
-    public void escena1() {
-
-        System.out.println("Al ir por este camino, te topas con un enemigo y empieza un combate inesperaso. " + this.escena1);
-
-    }
-
-    public void escena2() {
-
-    }
-
-    public void escena3() {
-
-    }
-
-    public void escena4() {
-
+    public void escena1(){
+    
     }
 }
