@@ -18,7 +18,6 @@ public class Juego {
 
     }
 
-
     public String getIntroduccicon() {
         return introduccicon;
     }
@@ -51,11 +50,11 @@ public class Juego {
 
     public void menu(int opcion) {
 
-        this.menu=opcion;
+        this.menu = opcion;
         System.out.println("Eleccion: " + this.menu);
         switch (this.menu) {
             case 1:
-                System.out.println("Al ir por este camino, te topas con un enemigo y empieza un combate inesperaso. " + this.escena1);
+
                 break;
 
             default:
@@ -64,7 +63,8 @@ public class Juego {
 
     }
 
-    public void escena1(){
-    
+    public void escena1() {
+        System.out.println("Al ir por este camino, te topas con un enemigo y empieza un combate inesperaso. ");
+
     }
 }
