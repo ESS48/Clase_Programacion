@@ -45,7 +45,7 @@ public class Arma {
     public void devolverDanio(){
     
         Random r=new Random();
-        int devolver=r.nextInt();
+        int devolver=r.nextInt(this.danioMaximo);
         
         this.danioMaximo=devolver;
     
