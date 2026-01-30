@@ -13,14 +13,10 @@ import java.util.Scanner;
 public class Aventura_Conversacional {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        int opcion;
+
         Juego juego=new Juego();
         
         juego.introduccicon();
-        
-        System.out.println("Elige una opcion entre los cuatro caminos: ");
-        opcion=teclado.nextInt();
-        juego.menu(opcion);
+
     }
 }
