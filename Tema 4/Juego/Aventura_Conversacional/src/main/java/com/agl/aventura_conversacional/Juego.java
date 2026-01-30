@@ -10,14 +10,41 @@ package com.agl.aventura_conversacional;
  */
 public class Juego {
 
+    private Jugador jugador;
+    private Arma Arma;
+    private Enemigo enemigo;
+    
+    
     private String introduccicon;
     private int menu;
     private String escena1;
 
-    public Juego() {
-
+    
+    
+    public Jugador getJugador() {
+        return jugador;
     }
 
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public Arma getArma() {
+        return Arma;
+    }
+
+    public void setArma(Arma Arma) {
+        this.Arma = Arma;
+    }
+
+    public Enemigo getEnemigo() {
+        return enemigo;
+    }
+
+    public void setEnemigo(Enemigo enemigo) {
+        this.enemigo = enemigo;
+    }
+    
     public String getIntroduccicon() {
         return introduccicon;
     }
