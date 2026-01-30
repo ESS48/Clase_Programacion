@@ -40,7 +40,7 @@ public class Arma {
         System.out.println("Daño maximo: "+this.danioMaximo);
     }
     
-    public void devolverDanio(){
+    public void devolverDanio(int devolver){
     
     
     
