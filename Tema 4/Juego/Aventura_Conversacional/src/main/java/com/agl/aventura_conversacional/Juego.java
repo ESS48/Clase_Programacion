@@ -19,6 +19,7 @@ public class Juego {
     
     private String introduccicon;
     private String escena1;
+    private String escena2;
     
     public Jugador getJugador() {
         return jugador;
@@ -128,8 +129,9 @@ public class Juego {
     
     public void escena2() {
         
-        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida");
+        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida"+this.escena2);
         jugador.restarHP(3);
+        jugador.accesoAtributos();
     }
     
 }
