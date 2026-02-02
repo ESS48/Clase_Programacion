@@ -17,7 +17,7 @@ public class Juego {
     private Scanner sc = new Scanner(System.in);
 
 
-    public void introduccicon() {
+    public void introducion() {
         int camino;
         do {
         System.out.println("==Inicio  De  Partida==");
@@ -125,7 +125,8 @@ public class Juego {
 
     private void escena2() {
 
-        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo.");
+        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te quite 3 de vida");
+        
         System.out.println("Despues del golpe te das cuenta que el camino no tiene salida, haciendo que vuelvas para atras.");
     }
 
