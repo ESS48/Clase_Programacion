@@ -13,34 +13,9 @@ import java.util.Scanner;
  */
 public class Juego {
 
-    private Jugador jugador;
-    private Arma Arma;
-    private Enemigo enemigo;
+
     private Scanner sc = new Scanner(System.in);
 
-    public Jugador getJugador() {
-        return jugador;
-    }
-
-    public void setJugador(Jugador jugador) {
-        this.jugador = jugador;
-    }
-
-    public Arma getArma() {
-        return Arma;
-    }
-
-    public void setArma(Arma Arma) {
-        this.Arma = Arma;
-    }
-
-    public Enemigo getEnemigo() {
-        return enemigo;
-    }
-
-    public void setEnemigo(Enemigo enemigo) {
-        this.enemigo = enemigo;
-    }
 
     public void introduccicon() {
         int camino;
@@ -150,9 +125,7 @@ public class Juego {
 
     private void escena2() {
 
-        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida ");
-        jugador.restarHP(3);
-        jugador.accesoAtributos();
+        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo.");
         System.out.println("Despues del golpe te das cuenta que el camino no tiene salida, haciendo que vuelvas para atras.");
     }
 
