@@ -48,7 +48,7 @@ public class Juego {
                 System.out.println("Ese camino no existe.");
                 break;
         }
-        } while (camino!=4);
+        } while (camino!=4 || jugador.getvida()>=0);
     }
 
     private void escena1() {
@@ -134,8 +134,9 @@ public class Juego {
 
     private void escena3() {
 
-        System.out.println("Sigues por este camino donde caminas durante mucho tiempo, haciendo que vuelvas al principio. ");
-
+        System.out.println("Sigues por este camino donde caminas durante mucho tiempo, haciendo que vuelvas al principio y dando te cuenta que hay una pocion de vida en el suelo para curarte  ");
+        jugador.sumarHP(4);
+        jugador.accesoAtributos();
     }
 
     private void escena4() {
