@@ -48,7 +48,7 @@ public class Juego {
                 System.out.println("Ese camino no existe.");
                 break;
         }
-        } while (camino!=4 || jugador.getvida()>=0);
+        } while (camino!=4);
     }
 
     private void escena1() {
