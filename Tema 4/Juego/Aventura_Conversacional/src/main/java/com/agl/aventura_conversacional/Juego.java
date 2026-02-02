@@ -16,10 +16,7 @@ public class Juego {
     private Jugador jugador;
     private Arma Arma;
     private Enemigo enemigo;
-    
-    private String introduccicon;
-    private String escena1;
-    private String escena2;
+    private Scanner sc=new Scanner(System.in);
     
     public Jugador getJugador() {
         return jugador;
@@ -46,13 +43,19 @@ public class Juego {
     }
     
     public void introduccicon() {
+        System.out.println("==Inicio  De  Partida==");
+        System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
+        System.out.println("1.Primer camino");
+        System.out.println("2.Segundo camino");
         
-        System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. " + this.introduccicon);
         
+        if () {
+            
+        }
     }
     
     public void escena1() {
-        System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. " + this.escena1);
+        System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. ");
         
         Scanner teclado = new Scanner(System.in);
         String nombre;
@@ -129,7 +132,7 @@ public class Juego {
     
     public void escena2() {
         
-        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida"+this.escena2);
+        System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida ");
         jugador.restarHP(3);
         jugador.accesoAtributos();
     }
