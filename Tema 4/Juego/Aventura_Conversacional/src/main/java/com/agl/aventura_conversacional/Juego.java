@@ -43,6 +43,8 @@ public class Juego {
     }
 
     public void introduccicon() {
+        int camino;
+        do {
         System.out.println("==Inicio  De  Partida==");
         System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
         System.out.println("Primer camino");
@@ -50,7 +52,7 @@ public class Juego {
         System.out.println("Tercer camino");
         System.out.println("Cuarto camino");
 
-        int camino = sc.nextInt();
+        camino = sc.nextInt();
 
         switch (camino) {
             case 1:
@@ -70,6 +72,7 @@ public class Juego {
                 System.out.println("Ese camino no existe.");
                 break;
         }
+        } while (camino!=4);
     }
 
     private void escena1() {
@@ -150,7 +153,7 @@ public class Juego {
         System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te baje 3 puntos de vida ");
         jugador.restarHP(3);
         jugador.accesoAtributos();
-        System.out.println("Despues del golpe te das cuenta que el camino no tiene salida.");
+        System.out.println("Despues del golpe te das cuenta que el camino no tiene salida, haciendo que vuelvas para atras.");
     }
 
     private void escena3() {
