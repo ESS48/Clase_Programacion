@@ -75,10 +75,6 @@ public class Juego {
     private void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. ");
 
-        
-        
-        int opcion=sc.nextInt();
-
         System.out.println("Dime tu nombre de personaje: ");
         String nombre = sc.next();
 
@@ -87,7 +83,8 @@ public class Juego {
         Enemigo mounstro = new Enemigo("Goblin ", 15, 4);
 
         System.out.println("¡Que empieze el combate!");
-
+        
+        int opcion;
         do {
 
             System.out.println("Jugador: " + jugador.getNombre());
@@ -97,7 +94,7 @@ public class Juego {
             System.out.println("Mounstro: " + mounstro.getTipo());
             System.out.println("Vida: " + mounstro.getvida());
             System.out.println("Daño máx: " + mounstro.getDanioMaximo());
-
+   
             System.out.println("Escoge una opción: ");
             System.out.println("1. Atacar");
             System.out.println("2. Curarte");
