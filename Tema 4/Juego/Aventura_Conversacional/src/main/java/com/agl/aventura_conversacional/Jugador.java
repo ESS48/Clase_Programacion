@@ -68,7 +68,6 @@ public class Jugador {
     
         System.out.println("Nombre: "+this.nombre);
         System.out.println("Vida: "+this.vida);
-        System.out.println("Arma: "+this.arma);
         
     }
     

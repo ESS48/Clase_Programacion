@@ -13,10 +13,11 @@ import java.util.Scanner;
  */
 public class Juego {
 
-
     private Scanner sc = new Scanner(System.in);
-
-
+    Jugador jugador;
+    Enemigo mounstro;
+    Arma a1;
+    
     public void introducion() {
         int camino;
         do {
@@ -56,9 +57,9 @@ public class Juego {
         System.out.println("Dime tu nombre de personaje: ");
         String nombre = sc.next();
 
-        Arma a1 = new Arma("Cuchillo ", 5);
-        Jugador jugador = new Jugador(nombre, 12, a1);
-        Enemigo mounstro = new Enemigo("Goblin ", 15, 4);
+        a1 = new Arma("Cuchillo ", 5);
+        jugador = new Jugador(nombre, 12, a1);
+        mounstro = new Enemigo("Goblin ", 15, 4);
 
         System.out.println("¡Que empieze el combate!");
         
@@ -126,7 +127,8 @@ public class Juego {
     private void escena2() {
 
         System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te quite 3 de vida");
-        
+        jugador.restarHP(3);
+        jugador.accesoAtributos();
         System.out.println("Despues del golpe te das cuenta que el camino no tiene salida, haciendo que vuelvas para atras.");
     }
 
