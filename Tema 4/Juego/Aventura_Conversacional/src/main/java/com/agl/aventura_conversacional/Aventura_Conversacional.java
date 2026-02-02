@@ -19,7 +19,5 @@ public class Aventura_Conversacional {
         juego.introduccicon();
         
 
-        
-
     }
 }

@@ -50,16 +50,25 @@ public class Juego {
         System.out.println("Tercer camino");
         System.out.println("Cuarto camino");
 
-        int caminos = sc.nextInt();
+        int camino = sc.nextInt();
 
-        if (caminos == 1) {
-            escena1();
-        } else if (caminos == 2) {
-            escena2();
-        } else if (caminos == 3) {
-            escena3();
-        } else if (caminos == 4) {
-            escena4();
+        switch (camino) {
+            case 1:
+                escena1();
+                break;
+            case 2:
+                escena2();
+                break;
+            case 3:
+                escena3();
+                break;
+            case 4:
+                escena4();
+                break;
+            default:
+                System.out.println("¡OYE!");
+                System.out.println("Ese camino no existe.");
+                break;
         }
     }
 
@@ -67,11 +76,11 @@ public class Juego {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. ");
 
         
-        String nombre;
+        
         int opcion=sc.nextInt();
 
         System.out.println("Dime tu nombre de personaje: ");
-        nombre = sc.next();
+        String nombre = sc.next();
 
         Arma a1 = new Arma("Cuchillo ", 5);
         Jugador jugador = new Jugador(nombre, 12, a1);
