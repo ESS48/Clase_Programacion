@@ -48,6 +48,12 @@ public class Juego {
                     break;
                 case 4:
                     escena4();
+
+                    if (jugador.getvida() > 6) {
+                        finalBueno();
+                    } else {
+                        finalMalo();
+                    }
                     break;
                 default:
                     System.out.println("¡OYE!");
@@ -146,24 +152,22 @@ public class Juego {
         System.out.println("Sigues el camino donde te aparecen unas luciernagas donde te guian hasta la salida. ");
 
     }
-    
-    
-    private void finalBueno(){
-    
-        System.out.println("");
-        
+
+    private void finalBueno() {
+
+        System.out.println("Al salir de la cueva sigues tu camino y llegas a un pueblo.");
+
         System.out.println("¡ENHORABUENA!");
         System.out.println("¡Has Completo el juego!");
-    
+
     }
-    
-    
+
     private void finalMalo() {
-    
-        System.out.println("");
-        
+
+        System.out.println("Al salir de la cueva te siente tan herido haciendo que no puedas seguir con tu aventura.");
+
         System.out.println("¡ENHORABUENA!");
         System.out.println("¡HAS COMPLETADO EL JUEGO!");
-        
+
     }
 }
