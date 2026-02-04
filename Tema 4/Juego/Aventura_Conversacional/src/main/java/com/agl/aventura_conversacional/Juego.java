@@ -26,9 +26,9 @@ public class Juego {
         a1 = new Arma("Cuchillo ", 5);
         jugador = new Jugador(nombre, 12, a1);
         System.out.println("==Inicio  De  Partida==");
-        do {
+        System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
 
-            System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
+        do {
             System.out.println("Primera camino");
             System.out.println("Segundo camino");
             System.out.println("Tercer camino");
@@ -52,9 +52,10 @@ public class Juego {
                 default:
                     System.out.println("¡OYE!");
                     System.out.println("Ese camino no existe.");
+                    System.out.println("No me tomes el pelo y vuelve a elegir");
                     break;
             }
-        } while (jugador.getvida() > 0 && camino != 4);
+        } while (jugador.getvida() > 0 && (camino != 4));
     }
 
     private void escena1() {
