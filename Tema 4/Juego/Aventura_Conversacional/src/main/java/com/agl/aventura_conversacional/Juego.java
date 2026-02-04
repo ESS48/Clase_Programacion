@@ -17,10 +17,15 @@ public class Juego {
     Jugador jugador;
     Enemigo mounstro;
     Arma a1;
-    
+            
     public void introducion() {
         int camino;
         do {
+        System.out.println("Dime tu nombre de personaje: ");
+        String nombre = sc.next();
+        a1 = new Arma("Cuchillo ", 5);
+        jugador = new Jugador(nombre, 12, a1);
+            
         System.out.println("==Inicio  De  Partida==");
         System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
         System.out.println("Primer camino");
@@ -54,11 +59,6 @@ public class Juego {
     private void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. ");
 
-        System.out.println("Dime tu nombre de personaje: ");
-        String nombre = sc.next();
-
-        a1 = new Arma("Cuchillo ", 5);
-        jugador = new Jugador(nombre, 12, a1);
         mounstro = new Enemigo("Goblin ", 15, 4);
 
         System.out.println("¡Que empieze el combate!");
