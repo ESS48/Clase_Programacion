@@ -61,7 +61,7 @@ public class Juego {
                     System.out.println("No me tomes el pelo y vuelve a elegir");
                     break;
             }
-        } while (jugador.getvida() > 0 && (camino != 4));
+        } while (jugador.getvida() > 0 && camino != 4);
     }
 
     private void escena1() {
@@ -127,7 +127,7 @@ public class Juego {
         if (jugador.getvida() == 0) {
             System.out.println("GAME OVER");
         } else if (mounstro.getvida() == 0) {
-            System.out.println("¡Has Ganado!");
+            System.out.println("¡Has Ganado el combate!");
         }
 
     }
