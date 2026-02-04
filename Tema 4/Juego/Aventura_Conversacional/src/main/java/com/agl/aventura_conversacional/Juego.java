@@ -155,7 +155,7 @@ public class Juego {
 
     private void finalBueno() {
 
-        System.out.println("Al salir de la cueva sigues tu camino y llegas a un pueblo.");
+        System.out.println("Al salir de la cueva sigues tu camino y llegas a un pueblo donde puedes descansar tranquilamente.");
 
         System.out.println("¡ENHORABUENA!");
         System.out.println("¡Has Completo el juego!");
@@ -164,7 +164,7 @@ public class Juego {
 
     private void finalMalo() {
 
-        System.out.println("Al salir de la cueva te siente tan herido haciendo que no puedas seguir con tu aventura.");
+        System.out.println("Al salir de la cueva te siente tan herido haciendo que no puedas seguir con tu aventura haciendo que te encuentren unos enemigos y te ataquen sin piedad.");
 
         System.out.println("¡ENHORABUENA!");
         System.out.println("¡HAS COMPLETADO EL JUEGO!");
