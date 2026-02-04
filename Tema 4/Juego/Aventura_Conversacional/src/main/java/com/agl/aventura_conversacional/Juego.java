@@ -17,43 +17,44 @@ public class Juego {
     Jugador jugador;
     Enemigo mounstro;
     Arma a1;
-            
+
     public void introducion() {
         int camino;
-        do {
+
         System.out.println("Dime tu nombre de personaje: ");
         String nombre = sc.next();
         a1 = new Arma("Cuchillo ", 5);
         jugador = new Jugador(nombre, 12, a1);
-            
         System.out.println("==Inicio  De  Partida==");
-        System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
-        System.out.println("Primer camino");
-        System.out.println("Segundo camino");
-        System.out.println("Tercer camino");
-        System.out.println("Cuarto camino");
+        do {
 
-        camino = sc.nextInt();
+            System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
+            System.out.println("Primer camino");
+            System.out.println("Segundo camino");
+            System.out.println("Tercer camino");
+            System.out.println("Cuarto camino");
 
-        switch (camino) {
-            case 1:
-                escena1();
-                break;
-            case 2:
-                escena2();
-                break;
-            case 3:
-                escena3();
-                break;
-            case 4:
-                escena4();
-                break;
-            default:
-                System.out.println("¡OYE!");
-                System.out.println("Ese camino no existe.");
-                break;
-        }
-        } while (camino!=4);
+            camino = sc.nextInt();
+
+            switch (camino) {
+                case 1:
+                    escena1();
+                    break;
+                case 2:
+                    escena2();
+                    break;
+                case 3:
+                    escena3();
+                    break;
+                case 4:
+                    escena4();
+                    break;
+                default:
+                    System.out.println("¡OYE!");
+                    System.out.println("Ese camino no existe.");
+                    break;
+            }
+        } while (jugador.getvida() > 0 && camino != 4);
     }
 
     private void escena1() {
@@ -62,7 +63,7 @@ public class Juego {
         mounstro = new Enemigo("Goblin ", 15, 4);
 
         System.out.println("¡Que empieze el combate!");
-        
+
         int opcion;
         do {
 
@@ -73,7 +74,7 @@ public class Juego {
             System.out.println("Mounstro: " + mounstro.getTipo());
             System.out.println("Vida: " + mounstro.getvida());
             System.out.println("Daño máx: " + mounstro.getDanioMaximo());
-   
+
             System.out.println("Escoge una opción: ");
             System.out.println("1. Atacar");
             System.out.println("2. Curarte");
