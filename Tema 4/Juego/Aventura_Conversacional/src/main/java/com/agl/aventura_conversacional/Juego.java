@@ -29,7 +29,7 @@ public class Juego {
         do {
 
             System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
-            System.out.println("Primer camino");
+            System.out.println("Primera camino");
             System.out.println("Segundo camino");
             System.out.println("Tercer camino");
             System.out.println("Cuarto camino");
@@ -58,7 +58,7 @@ public class Juego {
     }
 
     private void escena1() {
-        System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperaso. ");
+        System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperado. ");
 
         mounstro = new Enemigo("Goblin ", 15, 4);
 
@@ -144,5 +144,25 @@ public class Juego {
 
         System.out.println("Sigues el camino donde te aparecen unas luciernagas donde te guian hasta la salida. ");
 
+    }
+    
+    
+    private void finalBueno(){
+    
+        System.out.println("");
+        
+        System.out.println("¡ENHORABUENA!");
+        System.out.println("¡Has Completo el juego!");
+    
+    }
+    
+    
+    private void finalMalo() {
+    
+        System.out.println("");
+        
+        System.out.println("¡ENHORABUENA!");
+        System.out.println("¡HAS COMPLETADO EL JUEGO!");
+        
     }
 }
