@@ -15,7 +15,7 @@ public class Juego {
 
     private Scanner sc = new Scanner(System.in);
     Jugador jugador;
-    Enemigo mounstro;
+    private Enemigo[] mounstro;
     Arma a1;
 
     public void introducion() {
@@ -25,6 +25,11 @@ public class Juego {
         String nombre = sc.next();
         a1 = new Arma("Cuchillo ", 5);
         jugador = new Jugador(nombre, 12, a1);
+        mounstro=new Enemigo[3];
+        mounstro[0]= new Enemigo("Goblin",15,4);
+        mounstro[0]= new Enemigo("Golem",11,3);
+        mounstro[0]= new Enemigo("Bruja",14,2);
+        
         System.out.println("==Inicio  De  Partida==");
         System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
 
@@ -63,11 +68,21 @@ public class Juego {
             }
         } while (jugador.getvida() > 0 && camino != 4);
     }
+    
+    private Enemigo buscarEnemigo(){
+    
+        for (int i = 0; i < 10; i++) {
+            
+        }
+        
+        return null;
+    
+    }
 
     private void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperado. ");
 
-        mounstro = new Enemigo("Goblin ", 15, 4);
+        
 
         System.out.println("¡Que empieze el combate!");
 

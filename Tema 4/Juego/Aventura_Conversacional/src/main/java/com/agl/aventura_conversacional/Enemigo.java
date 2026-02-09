@@ -13,6 +13,7 @@ public class Enemigo {
     private String tipo;
     private int vida;
     private int danioMaximo;
+    boolean derrotado;
 
     public Enemigo() {
         this.tipo = "Golem";
@@ -24,6 +25,14 @@ public class Enemigo {
         this.tipo = tipo;
         this.vida = vida;
         this.danioMaximo = danioMaximo;
+    }
+
+    public boolean isDerrotado() {
+        return derrotado;
+    }
+
+    public void setDerrotado(boolean derrotado) {
+        this.derrotado = derrotado;
     }
 
     public String getTipo() {
