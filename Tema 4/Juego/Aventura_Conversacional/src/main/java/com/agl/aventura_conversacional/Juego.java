@@ -74,8 +74,8 @@ public class Juego {
 
         for (int i = 0; i < mounstro.length; i++) {
 
-            if (mounstro[i].isDerrotado()) {
-                 return mounstro[i];
+            if (!mounstro[i].isDerrotado()) {
+                return mounstro[i];
             }
         }
         return null;
@@ -91,7 +91,6 @@ public class Juego {
             System.out.println("No hay enemigos");
             return;
         }
-        
         
 
         System.out.println("¡Que empieze el combate!");
@@ -151,7 +150,9 @@ public class Juego {
         if (jugador.getvida() <= 0) {
             System.out.println("GAME OVER");
         } else if (mounstro.getvida() <= 0) {
+            mounstro.setDerrotado(true);
             System.out.println("¡Has Ganado el combate!");
+            
         }
 
     }
