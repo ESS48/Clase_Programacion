@@ -13,18 +13,20 @@ public class Enemigo {
     private String tipo;
     private int vida;
     private int danioMaximo;
-    boolean derrotado;
+    private boolean derrotado;
 
     public Enemigo() {
         this.tipo = "Golem";
         this.vida = 18;
         this.danioMaximo = 5;
+        this.derrotado=false;
     }
 
     public Enemigo(String tipo, int vida, int danioMaximo) {
         this.tipo = tipo;
         this.vida = vida;
         this.danioMaximo = danioMaximo;
+        this.derrotado=false;
     }
 
     public boolean isDerrotado() {
@@ -78,6 +80,7 @@ public class Enemigo {
         System.out.println("Tipo de Enemigo: " + this.tipo);
         System.out.println("Numero de vida del enemigo: " + this.vida);
         System.out.println("Daño maximo del enemigo: " + this.danioMaximo);
+        System.out.println("¿Esta derrotado? "+this.derrotado);
     }
 
     public void calcularDanio(int ataque) {

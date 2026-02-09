@@ -25,6 +25,7 @@ public class Juego {
         String nombre = sc.next();
         a1 = new Arma("Cuchillo ", 5);
         jugador = new Jugador(nombre, 12, a1);
+        
         mounstro=new Enemigo[3];
         mounstro[0]= new Enemigo("Goblin",15,4);
         mounstro[1]= new Enemigo("Golem",11,3);
@@ -73,7 +74,9 @@ public class Juego {
     
         for (int i = 0; i < mounstro.length; i++) {
             
-            System.out.println(mounstro[i]);
+            if (mounstro[i].isDerrotado()) {
+                System.out.println(mounstro[i].accesoAtributos());
+            }
             
         }
         
@@ -86,13 +89,21 @@ public class Juego {
 
         Enemigo mounstro = buscarEnemigo();
         
+        if (mounstro==null) {
+            
+            
+            return;
+        }
         
+        boolean victoria=(jugador,mounstro);
+        
+        if (victoria) {
+            mounstro.setDerrotado(true);
+            introducion();
+        }
 
         System.out.println("¡Que empieze el combate!");
-        int opcion;
-        
-        
-                
+        int opcion; 
         do {
 
             System.out.println("Jugador: " + jugador.getNombre());
@@ -145,9 +156,9 @@ public class Juego {
 
         } while (jugador.getvida() > 0 && mounstro.getvida() > 0 && opcion != 3);
 
-        if (jugador.getvida() == 0) {
+        if (jugador.getvida() <= 0) {
             System.out.println("GAME OVER");
-        } else if (mounstro.getvida() == 0) {
+        } else if (mounstro.getvida() <= 0) {
             System.out.println("¡Has Ganado el combate!");
         }
 
