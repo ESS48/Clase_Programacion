@@ -27,8 +27,8 @@ public class Juego {
         jugador = new Jugador(nombre, 12, a1);
         mounstro=new Enemigo[3];
         mounstro[0]= new Enemigo("Goblin",15,4);
-        mounstro[0]= new Enemigo("Golem",11,3);
-        mounstro[0]= new Enemigo("Bruja",14,2);
+        mounstro[1]= new Enemigo("Golem",11,3);
+        mounstro[2]= new Enemigo("Bruja",14,2);
         
         System.out.println("==Inicio  De  Partida==");
         System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
@@ -71,7 +71,9 @@ public class Juego {
     
     private Enemigo buscarEnemigo(){
     
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < mounstro.length; i++) {
+            
+            System.out.println(mounstro[i]);
             
         }
         
@@ -82,11 +84,15 @@ public class Juego {
     private void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperado. ");
 
+        Enemigo mounstro = buscarEnemigo();
+        
         
 
         System.out.println("¡Que empieze el combate!");
-
         int opcion;
+        
+        
+                
         do {
 
             System.out.println("Jugador: " + jugador.getNombre());
@@ -120,7 +126,7 @@ public class Juego {
                 case 3:
 
                     System.out.println("Has huido");
-                    System.out.println("FIN DEL JUEGO");
+                    System.out.println("FIN DEL COMBATE");
 
                     break;
 
