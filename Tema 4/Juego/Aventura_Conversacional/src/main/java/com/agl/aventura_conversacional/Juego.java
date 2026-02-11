@@ -74,7 +74,7 @@ public class Juego {
 
         for (int i = 0; i < mounstro.length; i++) {
 
-            if (!mounstro[i].isDerrotado()) {
+            if (mounstro[i]!=null && mounstro[i].isDerrotado()) {
                 return mounstro[i];
             }
         }
@@ -85,9 +85,9 @@ public class Juego {
     private void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperado. ");
 
-        Enemigo mounstro = buscarEnemigo();
+        Enemigo mon = buscarEnemigo();
 
-        if (mounstro == null) {
+        if (mon == null) {
             System.out.println("No hay enemigos");
             return;
         }
@@ -101,9 +101,9 @@ public class Juego {
             System.out.println("Vida: " + jugador.getvida());
             System.out.println("Arma: " + jugador.getArma().getDanioMaximo());
 
-            System.out.println("Mounstro: " + mounstro.getTipo());
-            System.out.println("Vida: " + mounstro.getvida());
-            System.out.println("Daño máx: " + mounstro.getDanioMaximo());
+            System.out.println("Mounstro: " + mon.getTipo());
+            System.out.println("Vida: " + mon.getvida());
+            System.out.println("Daño máx: " + mon.getDanioMaximo());
 
             System.out.println("Escoge una opción: ");
             System.out.println("1. Atacar");
@@ -113,9 +113,10 @@ public class Juego {
 
             switch (opcion) {
                 case 1:
+                    //cambiar el aleatorio
                     Random dado = new Random();
                     int ataque = dado.nextInt(jugador.getArma().getDanioMaximo());
-                    mounstro.restarHP(ataque);
+                    mon.restarHP(ataque);
                     System.out.println("Daño: " + ataque);
 
                     break;
@@ -140,17 +141,17 @@ public class Juego {
             //Turno mounstro
             if (opcion == 1 || opcion == 2) {
                 Random r1 = new Random();
-                int golpe = r1.nextInt(mounstro.getDanioMaximo());
+                int golpe = r1.nextInt(mon.getDanioMaximo());
                 jugador.restarHP(golpe);
-                System.out.println("El goblin te ataca y te hace " + golpe + " de daño.");
+                System.out.println("El "+ mon.getTipo() +"te ataca y te hace " + golpe + " de daño.");
             }
 
-        } while (jugador.getvida() > 0 && mounstro.getvida() > 0 && opcion != 3);
+        } while (jugador.getvida() > 0 && mon.getvida() > 0 && opcion != 3);
 
         if (jugador.getvida() <= 0) {
             System.out.println("GAME OVER");
-        } else if (mounstro.getvida() <= 0) {
-            mounstro.setDerrotado(true);
+        } else if (mon.getvida() <= 0) {
+            mon.setDerrotado(true);
             System.out.println("¡Has Ganado el combate!");
             
         }
