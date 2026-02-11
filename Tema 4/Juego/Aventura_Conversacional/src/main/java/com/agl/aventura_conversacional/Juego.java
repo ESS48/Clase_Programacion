@@ -74,7 +74,7 @@ public class Juego {
 
         for (int i = 0; i < mounstro.length; i++) {
 
-            if (mounstro[i]!=null && !mounstro[i].isDerrotado()) {
+            if (mounstro[i] != null && !mounstro[i].isDerrotado()) {
                 return mounstro[i];
             }
         }
@@ -91,7 +91,6 @@ public class Juego {
             System.out.println("No hay enemigos");
             return;
         }
-        
 
         System.out.println("¡Que empieze el combate!");
         int opcion;
@@ -115,7 +114,7 @@ public class Juego {
                 case 1:
                     //cambiar el aleatorio
                     Random dado = new Random();
-                    int ataque = dado.nextInt(jugador.getArma().getDanioMaximo()+1);
+                    int ataque = dado.nextInt(jugador.getArma().getDanioMaximo() + 1);
                     mon.restarHP(ataque);
                     System.out.println("Daño: " + ataque);
 
@@ -143,7 +142,7 @@ public class Juego {
                 Random r1 = new Random();
                 int golpe = r1.nextInt(mon.getDanioMaximo());
                 jugador.restarHP(golpe);
-                System.out.println("El "+ mon.getTipo() +"te ataca y te hace " + golpe + " de daño.");
+                System.out.println("El " + mon.getTipo() + "te ataca y te hace " + golpe + " de daño.");
             }
 
         } while (jugador.getvida() > 0 && mon.getvida() > 0 && opcion != 3);
@@ -153,7 +152,7 @@ public class Juego {
         } else if (mon.getvida() <= 0) {
             mon.setDerrotado(true);
             System.out.println("¡Has Ganado el combate!");
-            
+
         }
 
     }
