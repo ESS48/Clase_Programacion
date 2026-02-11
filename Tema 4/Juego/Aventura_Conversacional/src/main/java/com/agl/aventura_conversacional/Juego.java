@@ -74,7 +74,7 @@ public class Juego {
 
         for (int i = 0; i < mounstro.length; i++) {
 
-            if (mounstro[i]!=null && mounstro[i].isDerrotado()) {
+            if (mounstro[i]!=null && !mounstro[i].isDerrotado()) {
                 return mounstro[i];
             }
         }
@@ -115,7 +115,7 @@ public class Juego {
                 case 1:
                     //cambiar el aleatorio
                     Random dado = new Random();
-                    int ataque = dado.nextInt(jugador.getArma().getDanioMaximo());
+                    int ataque = dado.nextInt(jugador.getArma().getDanioMaximo()+1);
                     mon.restarHP(ataque);
                     System.out.println("Daño: " + ataque);
 
