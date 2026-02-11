@@ -40,7 +40,7 @@ public class Juego {
             System.out.println("Tercer camino");
             System.out.println("Cuarto camino");
 
-            camino = sc.nextInt();
+            camino = numero(1, 4);
 
             switch (camino) {
                 case 1:
@@ -60,11 +60,6 @@ public class Juego {
                     } else {
                         finalMalo();
                     }
-                    break;
-                default:
-                    System.out.println("¡OYE!");
-                    System.out.println("Ese camino no existe.");
-                    System.out.println("No me tomes el pelo y vuelve a elegir");
                     break;
             }
         } while (jugador.getvida() > 0 && camino != 4);
@@ -108,7 +103,7 @@ public class Juego {
             System.out.println("1. Atacar");
             System.out.println("2. Curarte");
             System.out.println("3. Huir");
-            opcion = sc.nextInt();
+            opcion = numero(1,3);
 
             switch (opcion) {
                 case 1:
@@ -195,4 +190,20 @@ public class Juego {
         System.out.println("¡HAS COMPLETADO EL JUEGO!");
 
     }
+
+    public int numero(int min, int max) {
+
+        int num;
+        do {
+            num = sc.nextInt();
+            if (num < min || num > max) {
+                System.out.println("¡OYE!");
+                System.out.println("Esa opcion no existe.");
+                System.out.println("No me tomes el pelo y vuelve a elegir");
+            }
+        } while (num < min || num > max);
+
+        return num;
+    }
+
 }
