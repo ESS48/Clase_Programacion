@@ -9,6 +9,7 @@ package com.agl.aventura_conversacional;
  * @author damt119
  */
 public class Personaje {
+
     private int vida;
 
     public Personaje(int vida) {
@@ -22,7 +23,25 @@ public class Personaje {
     public void setVida(int vida) {
         this.vida = vida;
     }
-    
-    
-    
+
+    public void restarHP(int cantidad) {
+
+        this.vida = this.vida - cantidad;
+
+        if (vida < 0) {
+            vida = 0;
+        }
+    }
+
+    public void sumarHP(int cantidad) {
+
+        this.vida = this.vida + cantidad;
+
+        
+    }
+
+    public boolean estaVivo() {
+
+        return this.vida > 0;
+    }
 }
