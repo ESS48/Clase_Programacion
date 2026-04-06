@@ -8,7 +8,7 @@ package com.agl.aventura_conversacional;
  *
  * @author damt119
  */
-public class Personaje {
+public abstract class Personaje {
 
     private int vida;
 
@@ -44,4 +44,6 @@ public class Personaje {
 
         return this.vida > 0;
     }
+    
+    public abstract int atacar();
 }
