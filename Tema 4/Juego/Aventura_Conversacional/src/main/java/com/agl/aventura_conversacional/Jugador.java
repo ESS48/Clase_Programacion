@@ -8,21 +8,16 @@ package com.agl.aventura_conversacional;
  *
  * @author damt119
  */
-public class Jugador {
+public class Jugador extends Personaje{
 
     private String nombre;
-    private int vida;
     private Arma arma;
 
-    public Jugador() {
-        this.nombre = "Elias";
-        this.vida = 50;
-        this.arma = new Arma("Baston",4);
-    }
+
 
     public Jugador(String nombre, int vida, Arma arma) {
+        super(vida);
         this.nombre = nombre;
-        this.vida = vida;
         this.arma = arma;
     }
 
@@ -35,11 +30,11 @@ public class Jugador {
     }
 
     public int getvida() {
-        return vida;
+        return super.getVida();
     }
 
     public void setvida(int vida) {
-        this.vida = vida;
+        super.setVida(vida);
     }
 
     public Arma getArma() {
@@ -50,25 +45,16 @@ public class Jugador {
         this.arma = arma;
     }
 
-    public void restarHP(int cantidad) {
-
-        this.vida = this.vida - cantidad;
-
-        if (this.vida < 0) {
-            this.vida = 0;
-        }
-
-    }
-
-    public void sumarHP(int cantidad) {
-        this.vida = this.vida + cantidad;
-    }
-    
     public void accesoAtributos(){
     
         System.out.println("Nombre: "+this.nombre);
-        System.out.println("Vida: "+this.vida);
+        System.out.println("Vida: "+super.getVida());
         
+    }
+
+    @Override
+    public int atacar() {
+        return this.arma.getDanioMaximo();
     }
     
 }

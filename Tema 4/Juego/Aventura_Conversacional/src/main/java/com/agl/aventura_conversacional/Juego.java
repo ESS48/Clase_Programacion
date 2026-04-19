@@ -147,7 +147,6 @@ public class Juego {
         } else if (mon.getvida() <= 0) {
             mon.setDerrotado(true);
             System.out.println("¡Has Ganado el combate!");
-
         }
 
     }

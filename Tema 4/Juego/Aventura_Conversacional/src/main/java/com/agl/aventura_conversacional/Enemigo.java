@@ -4,29 +4,23 @@
  */
 package com.agl.aventura_conversacional;
 
+import java.util.Random;
+
 /**
  *
  * @author damt119
  */
-public class Enemigo {
+public class Enemigo extends Personaje {
 
     private String tipo;
-    private int vida;
     private int danioMaximo;
     private boolean derrotado;
 
-    public Enemigo() {
-        this.tipo = "Golem";
-        this.vida = 18;
-        this.danioMaximo = 5;
-        this.derrotado=false;
-    }
-
     public Enemigo(String tipo, int vida, int danioMaximo) {
+        super(vida);
         this.tipo = tipo;
-        this.vida = vida;
         this.danioMaximo = danioMaximo;
-        this.derrotado=false;
+        this.derrotado = false;
     }
 
     public boolean isDerrotado() {
@@ -46,11 +40,11 @@ public class Enemigo {
     }
 
     public int getvida() {
-        return vida;
+        return super.getVida();
     }
 
     public void setvida(int vida) {
-        this.vida = vida;
+        super.setVida(vida);
     }
 
     public int getDanioMaximo() {
@@ -61,31 +55,25 @@ public class Enemigo {
         this.danioMaximo = danioMaximo;
     }
 
-    public void restarHP(int cantidad) {
-
-        this.vida = this.vida - cantidad;
-
-        if (this.vida < 0) {
-            this.vida = 0;
-        }
-
-    }
-
-    public void sumarHP(int cantidad) {
-        this.vida = this.vida + cantidad;
-    }
 
     public void accesoAtributos() {
 
         System.out.println("Tipo de Enemigo: " + this.tipo);
-        System.out.println("Numero de vida del enemigo: " + this.vida);
+        System.out.println("Numero de vida del enemigo: " + super.getVida());
         System.out.println("Daño maximo del enemigo: " + this.danioMaximo);
-        System.out.println("¿Esta derrotado? "+this.derrotado);
+        System.out.println("¿Esta derrotado? " + this.derrotado);
     }
 
     public void calcularDanio(int ataque) {
 
         this.danioMaximo = this.danioMaximo * ataque;
 
+    }
+
+    @Override
+    public int atacar() {
+        Random r = new Random();
+        int daño = r.nextInt(1, danioMaximo);
+        return daño;
     }
 }
