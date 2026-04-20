@@ -73,7 +73,7 @@ public class Enemigo extends Personaje {
     @Override
     public int atacar() {
         Random r = new Random();
-        int daño = r.nextInt(1, danioMaximo);
-        return daño;
+        int danio = r.nextInt(1, danioMaximo);
+        return danio;
     }
 }
