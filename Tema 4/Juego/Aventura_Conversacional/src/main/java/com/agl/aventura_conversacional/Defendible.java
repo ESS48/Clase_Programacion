@@ -9,5 +9,5 @@ package com.agl.aventura_conversacional;
  * @author santi
  */
 public interface Defendible {
-    int modificarDanioRecibido();
+    int modificarDanioRecibido(int danio);
 }

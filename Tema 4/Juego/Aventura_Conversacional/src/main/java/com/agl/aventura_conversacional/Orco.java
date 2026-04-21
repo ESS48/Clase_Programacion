@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author santi
  */
-public class Orco extends Enemigo {
+public class Orco extends Enemigo implements Defendible {
 
     public Orco(String tipo, int vida, int danioMaximo) {
         super(tipo, vida, danioMaximo);
@@ -18,11 +18,11 @@ public class Orco extends Enemigo {
 
     @Override
     public int atacar() {
-        
-        Random fallar = new Random();
-        int probabilidad = fallar.nextInt(1,2);
 
-        if (probabilidad==1) {
+        Random fallar = new Random();
+        int probabilidad = fallar.nextInt(1, 2);
+
+        if (probabilidad == 1) {
             Random r = new Random();
             int danio = r.nextInt(1, getDanioMaximo());
             return danio;
@@ -31,5 +31,28 @@ public class Orco extends Enemigo {
             return 0;
         }
 
+    }
+
+    @Override
+    public int modificarDanioRecibido(int danio) {
+        Random anulacion = new Random();
+        int probabilidad = anulacion.nextInt(1, 3);
+        int danioAtaque = 0;
+        switch (probabilidad) {
+            case 1:
+                int reduccionDanio = 2;
+                danioAtaque = danio - reduccionDanio;
+                break;
+            case 2:
+                System.out.println("El orco que redujo el daño en un 25%");
+                danioAtaque = danio * 25 / 100;
+                break;
+            case 3:
+                System.out.println("El orco anulo todo el danio");
+                danioAtaque= danio-danio;
+                break;
+        }
+
+        return danioAtaque;
     }
 }
