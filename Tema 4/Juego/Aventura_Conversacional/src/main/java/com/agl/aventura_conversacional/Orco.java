@@ -42,6 +42,12 @@ public class Orco extends Enemigo implements Defendible {
             case 1:
                 int reduccionDanio = 2;
                 danioAtaque = danio - reduccionDanio;
+                
+                System.out.println("¡El Orco se defiende! El daño se reduce de " + danio + " a " + danioAtaque);
+                
+                if (danioAtaque < 0) {
+                    danioAtaque = 0;
+                }
                 break;
             case 2:
                 System.out.println("El orco que redujo el daño en un 25%");
@@ -49,7 +55,7 @@ public class Orco extends Enemigo implements Defendible {
                 break;
             case 3:
                 System.out.println("El orco anulo todo el danio");
-                danioAtaque= danio-danio;
+                danioAtaque = danio - danio;
                 break;
         }
 
