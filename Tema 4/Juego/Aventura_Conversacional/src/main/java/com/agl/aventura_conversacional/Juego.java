@@ -117,7 +117,7 @@ public class Juego {
                     int danioProducido = ataque;
 
                     if (mon instanceof Defendible) {
-                        // Casting al tipo de la interfaz para acceder a su método
+                        // Casting cambia el tipo de la interfaz para acceder a su método
                         danioProducido = ((Defendible) mon).modificarDanioRecibido(danioProducido);
                     }
                     mon.restarHP(danioProducido);
