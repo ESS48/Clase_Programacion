@@ -18,7 +18,10 @@ public class Juego {
     Jugador jugador;
     private Enemigo[] mounstro;
     Arma a1;
-
+    private ArrayList<Enemigo> mousntros;
+    //constructor
+    //luego en el main hago un new de juego
+    
     public void introducion() {
         int camino;
 
