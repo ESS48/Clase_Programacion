@@ -17,7 +17,6 @@ public class Aventura_Conversacional {
         Juego juego=new Juego();
         
         juego.introducion();
-                
-
+        
     }
 }

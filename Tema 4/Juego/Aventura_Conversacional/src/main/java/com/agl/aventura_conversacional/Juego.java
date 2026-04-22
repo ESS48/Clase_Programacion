@@ -16,12 +16,15 @@ public class Juego {
 
     private Scanner sc = new Scanner(System.in);
     Jugador jugador;
-    private Enemigo[] mounstro;
     Arma a1;
     private ArrayList<Enemigo> mousntros;
+
     //constructor
     //luego en el main hago un new de juego
-    
+    public Juego() {
+        this.mousntros = new ArrayList<>();
+    }
+
     public void introducion() {
         int camino;
 
@@ -30,10 +33,12 @@ public class Juego {
         a1 = new Arma("Cuchillo ", 5);
         jugador = new Jugador(nombre, 12, a1);
 
-        mounstro = new Enemigo[3];
-        mounstro[0] = new Enemigo("Goblin", 15, 4);
-        mounstro[1] = new Enemigo("Golem", 11, 3);
-        mounstro[2] = new Enemigo("Bruja", 14, 2);
+        //mounstro = new Enemigo[3];
+        //mounstro[0] = new Enemigo("Goblin", 15, 4);
+        //mounstro[1] = new Enemigo("Golem", 11, 3);
+        //mounstro[2] = new Enemigo("Bruja", 14, 2);
+        mousntros.add(new Goblin("Goblin", 15, 4));
+        mousntros.add(new Orco("Orco", 11, 3));
 
         System.out.println("==Inicio  De  Partida==");
         System.out.println("Estas desorientado y sin querer entras a una cueva, donde te pierdes y encuentras 4 caminos donde si o si tienes que elegir uno. ");
@@ -71,10 +76,10 @@ public class Juego {
 
     private Enemigo buscarEnemigo() {
 
-        for (int i = 0; i < mounstro.length; i++) {
+        for (int i = 0; i < mousntros.size(); i++) {
 
-            if (mounstro[i] != null && !mounstro[i].isDerrotado()) {
-                return mounstro[i];
+            if (mousntros.get(i) != null && !mousntros.get(i).isDerrotado()) {
+                return mousntros.get(i);
             }
         }
         return null;
