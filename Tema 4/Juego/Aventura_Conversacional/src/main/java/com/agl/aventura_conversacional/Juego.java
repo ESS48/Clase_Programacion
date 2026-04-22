@@ -4,6 +4,7 @@
  */
 package com.agl.aventura_conversacional;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -103,7 +104,7 @@ public class Juego {
             System.out.println("1. Atacar");
             System.out.println("2. Curarte");
             System.out.println("3. Huir");
-            opcion = numero(1,3);
+            opcion = numero(1, 3);
 
             switch (opcion) {
                 case 1:
@@ -112,6 +113,16 @@ public class Juego {
                     int ataque = dado.nextInt(jugador.getArma().getDanioMaximo() + 1);
                     mon.restarHP(ataque);
                     System.out.println("Daño: " + ataque);
+
+                    int danioProducido = ataque;
+
+                    if (mon instanceof Defendible) {
+                        // Casting al tipo de la interfaz para acceder a su método
+                        danioProducido = ((Defendible) mon).modificarDanioRecibido(danioProducido);
+                    }
+                    mon.restarHP(danioProducido);
+
+                    System.out.println("Has atacado causando " + danioProducido + " puntos de daño.");
 
                     break;
                 case 2:
