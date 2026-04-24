@@ -19,8 +19,7 @@ public class Juego {
     Arma a1;
     private ArrayList<Enemigo> mousntros;
 
-    //constructor
-    //luego en el main hago un new de juego
+    //constructor para el array list
     public Juego() {
         this.mousntros = new ArrayList<>();
     }
