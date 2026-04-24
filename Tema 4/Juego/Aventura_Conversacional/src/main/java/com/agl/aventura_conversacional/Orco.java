@@ -38,6 +38,7 @@ public class Orco extends Enemigo implements Defendible {
         Random anulacion = new Random();
         int probabilidad = anulacion.nextInt(1, 3);
         int danioAtaque = 0;
+        //esto me sirve para elegir con el random para una de las posibilidades para que se  defienda
         switch (probabilidad) {
             case 1:
                 int reduccionDanio = 2;
