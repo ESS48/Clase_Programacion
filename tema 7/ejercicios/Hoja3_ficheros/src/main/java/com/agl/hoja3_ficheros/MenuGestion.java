@@ -39,6 +39,7 @@ public class MenuGestion {
 
             while (lineas != null) {
                 menu.add(lineas);
+                lineas = br.readLine();
             }
 
             br.close();
