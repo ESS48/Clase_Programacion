@@ -15,6 +15,8 @@ public class Hoja3_ficheros {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
 
+        MenuGestion mg = new MenuGestion();
+        
         System.out.println("--Menu Gestion--\n");
         System.out.println("1.-Cargar");
         System.out.println("2.-Añadir");
@@ -26,22 +28,22 @@ public class Hoja3_ficheros {
         do {
             switch (opcion) {
                 case 1:
-
+                    mg.cargar();
                     break;
                 case 2:
-
+                    mg.aniadir();
                     break;
                 case 3:
-
+                    mg.borrar();
                     break;
                 case 4:
-
+                    mg.guardar();
                     break;
                 case 5:
 
                     break;
                 case 0:
-
+                    System.out.println("Saliste del programa.");
                     break;
 
                 default:
