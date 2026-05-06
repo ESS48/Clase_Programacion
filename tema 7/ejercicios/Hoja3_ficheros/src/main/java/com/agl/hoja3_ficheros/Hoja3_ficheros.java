@@ -39,9 +39,6 @@ public class Hoja3_ficheros {
                 case 4:
                     mg.guardar();
                     break;
-                case 5:
-
-                    break;
                 case 0:
                     System.out.println("Saliste del programa.");
                     break;
