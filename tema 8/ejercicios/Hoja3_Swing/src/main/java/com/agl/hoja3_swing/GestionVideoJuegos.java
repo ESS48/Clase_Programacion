@@ -195,14 +195,30 @@ public class GestionVideoJuegos extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
 
-        Iterator<VideoJuego> i = lista.iterator();
-        
-        while(i.hasNext()){
-        VideoJuego v =i.next();
-            if (v.equals(v)) {
-                i.remove();
+        String eliminar = jListVideoJuego.getSelectedValue();
+
+        if (eliminar != null) {
+            
+            Iterator<VideoJuego> i = lista.iterator();
+
+            while (i.hasNext()) {
+                VideoJuego v = i.next();
+                //esto me sirve para comparar con el nombre del videojuego
+                if (v.getTitulo().equals(eliminar)) {
+                    i.remove();
+                }
             }
+            //para actualizar la lista
+            mostrarTodos();
+            
+            JOptionPane.showMessageDialog(this, "VideoJuego eliminador correctamente");
+        }else{
+        
+            JOptionPane.showMessageDialog(this, "Debes eliminar un juego","Error",JOptionPane.ERROR_MESSAGE);
         }
+        
+        
+        
 
     }//GEN-LAST:event_btnEliminarActionPerformed
 
