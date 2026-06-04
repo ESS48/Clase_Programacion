@@ -9,7 +9,7 @@ package com.agl.aventura_conversacional;
  *
  * @author damt119
  */
-public class Escena {
+public class Escena{
     private String nombre;
     private String descripcion;
     private Enemigo enemigo;
@@ -24,8 +24,7 @@ public class Escena {
         this.rutaImagen = rutaImagen;
     }
 
-    
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -72,27 +71,7 @@ public class Escena {
     }
     
     
-    public void escena1(){
-    
-        
-        
-    }
-    
-    
-    public void escena2(){
-    
-    }
-    
-    
-    public void escena3(){
-    
-    
-    }
-    
-    
-    public void escena4(){
-    
-    }
+  
     
     
 }

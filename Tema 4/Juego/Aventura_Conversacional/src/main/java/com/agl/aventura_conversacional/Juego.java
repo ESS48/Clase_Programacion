@@ -73,7 +73,7 @@ public class Juego {
         } while (jugador.getvida() > 0 && camino != 4);
     }
 
-    private Enemigo buscarEnemigo() {
+    public Enemigo buscarEnemigo() {
 
         for (int i = 0; i < mousntros.size(); i++) {
 
@@ -85,7 +85,7 @@ public class Juego {
 
     }
 
-    private void escena1() {
+    public void escena1() {
         System.out.println("Al ir por el primer camino, te topas con un enemigo y empieza un combate inesperado. ");
 
         Enemigo mon = buscarEnemigo();
@@ -169,7 +169,7 @@ public class Juego {
 
     }
 
-    private void escena2() {
+    public void escena2() {
 
         System.out.println("Eliges el segundo camino pero como hay tantos boquetes en el suelo, te caes y te golpeas de cara contra el suelo, haciendo que te quite 3 de vida");
         jugador.restarHP(3);
@@ -177,20 +177,20 @@ public class Juego {
         System.out.println("Despues del golpe te das cuenta que el camino no tiene salida, haciendo que vuelvas para atras.");
     }
 
-    private void escena3() {
+    public void escena3() {
 
         System.out.println("Sigues por este camino donde caminas durante mucho tiempo, haciendo que vuelvas al principio y dando te cuenta que hay una pocion de vida en el suelo para curarte  ");
         jugador.sumarHP(4);
         jugador.accesoAtributos();
     }
 
-    private void escena4() {
+    public void escena4() {
 
         System.out.println("Sigues el camino donde te aparecen unas luciernagas donde te guian hasta la salida. ");
 
     }
 
-    private void finalBueno() {
+    public void finalBueno() {
 
         System.out.println("Al salir de la cueva sigues tu camino y llegas a un pueblo donde puedes descansar tranquilamente.");
 
@@ -199,7 +199,7 @@ public class Juego {
 
     }
 
-    private void finalMalo() {
+    public void finalMalo() {
 
         System.out.println("Al salir de la cueva te siente tan herido haciendo que no puedas seguir con tu aventura haciendo que te encuentren unos enemigos y te ataquen sin piedad.");
 
